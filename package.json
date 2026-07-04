@@ -2,12 +2,15 @@
   "name": "clubhaus",
   "version": "1.0.0",
   "private": true,
+  "homepage": "https://YOUR_GITHUB_USERNAME.github.io/ClubHouse",
   "main": "expo/AppEntry.js",
   "scripts": {
     "start": "expo start",
     "android": "expo start --android",
     "ios": "expo start --ios",
-    "web": "expo start --web"
+    "web": "expo start --web",
+    "build": "expo export --platform web --clear && node scripts/prepare-gh-pages.js",
+    "deploy": "npm run build && gh-pages -d dist"
   },
   "dependencies": {
     "@expo/metro-runtime": "~5.0.5",
@@ -22,6 +25,7 @@
     "react-native-web": "^0.20.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.25.2"
+    "@babel/core": "^7.25.2",
+    "gh-pages": "^6.3.0"
   }
 }
